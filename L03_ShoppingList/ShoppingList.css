@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+h1 { color: white;}
+main {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button { color: black;}
+
+#inputGroup {padding-top: 30px;
+
+}
+
+#inputGroup input {color: rgb(69, 69, 69);
+height: 20 px;}
+
+.product {
+   display: flex;
+   width: 600px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.42);
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-left: 90px;
+    
+}
+
+.product p{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+
+.product i{
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+i  {
+    font-size: 22px;
+    
+}
+
+i:active {
+    color: rgb(109, 109, 109);}
+
