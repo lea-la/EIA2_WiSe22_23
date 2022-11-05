@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+h1 { color: white;}
+main {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+#inputGroup {padding-top: 30px;
+    display: flex;
+
+}
+
+#inputGroup input {color: rgb(69, 69, 69);
+height: 20 px;}
+
+#product {
+    display: block;
+    width: 600px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.42);
+    background-color: black;
+    color: black;
+    margin-top: 30px;
+    margin-left: 90px;
+    
+}
+
+
+
+fieldset {
+ 
+    border: 0ch;
+}
+
+
+#product div{
+    display: flex;
+    justify-content:space-between;
+
+
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+
+}
+
+
+
+i  {
+    font-size: 22px;
+    
+}
+
+i:active {
+    color: rgb(109, 109, 109);}
+
