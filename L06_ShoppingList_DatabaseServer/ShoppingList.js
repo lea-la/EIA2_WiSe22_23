@@ -20,7 +20,7 @@ var ShoppingList;
     function handleLoad() {
         return __awaiter(this, void 0, void 0, function* () {
             document.querySelector(".add").addEventListener("click", handleData);
-            let response = yield fetch("https://webuser.hs-furtwangen.de/~langelea/database/index.php/?command=find&collection=data");
+            let response = yield fetch("https://webuser.hs-furtwangen.de/~langelea/database?command=find&collection=data");
             let item = yield response.text();
             let data = JSON.parse(item);
             loadData(data);
@@ -62,7 +62,7 @@ var ShoppingList;
             newItem.appendChild(newCart);
             newCart.className = "shop";
             newTrash.addEventListener("click", function () {
-                deleteItem(newItem, i);
+                deleteItem(newItem);
             });
         }
     }
@@ -79,7 +79,7 @@ var ShoppingList;
             query.set("command", "insert");
             query.set("collection", "data");
             query.set("data", JSON.stringify(json));
-            let response = yield fetch("https://webuser.hs-furtwangen.de/~langelea/database/index.php?" + query.toString());
+            let response = yield fetch("https://webuser.hs-furtwangen.de/~langelea/database?" + query.toString());
         });
     }
     function addItem() {
@@ -111,18 +111,17 @@ var ShoppingList;
         newItem.appendChild(newCart);
         newCart.className = "shop";
         newTrash.addEventListener("click", function () {
-            deleteItem(newItem, i);
+            deleteItem(newItem);
         });
     }
-    function deleteItem(newItem, i) {
+    function deleteItem(newItem) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("Produkt wird entgültig aus der Einkaufliste entfernt");
             newItem.parentElement.removeChild(newItem);
             let query = new URLSearchParams();
             query.set("command", "delete");
             query.set("collection", "data");
-            query.set("id", i.toString());
-            let response = yield fetch("https://webuser.hs-furtwangen.de/~langelea/database/index.php?" + query.toString());
+            let response = yield fetch("https://webuser.hs-furtwangen.de/~langelea/database?" + query.toString());
         });
     }
     function addCart() {

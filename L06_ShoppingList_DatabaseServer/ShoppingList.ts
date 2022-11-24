@@ -30,7 +30,7 @@ namespace ShoppingList {
 
         document.querySelector(".add").addEventListener("click", handleData);
             
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~langelea/database/index.php/?command=find&collection=data");
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~langelea/database?command=find&collection=data");
         let item: string = await response.text();
         let data: Items = JSON.parse(item);
         loadData(data);
@@ -85,7 +85,7 @@ namespace ShoppingList {
                     newCart.className = "shop";
 
                     newTrash.addEventListener("click", function (): void {
-                        deleteItem(newItem, i);
+                        deleteItem(newItem);
                     });
 
                     
@@ -111,7 +111,7 @@ namespace ShoppingList {
            query.set("data", JSON.stringify(json));
           
 
-           let response: Response = await fetch("https://webuser.hs-furtwangen.de/~langelea/database/index.php?" + query.toString());
+           let response: Response = await fetch("https://webuser.hs-furtwangen.de/~langelea/database?" + query.toString());
           
 
         }
@@ -152,7 +152,7 @@ namespace ShoppingList {
                 newCart.className = "shop";
 
                 newTrash.addEventListener("click", function (): void {
-                    deleteItem(newItem, i);
+                    deleteItem(newItem);
                 });
 
                 
@@ -163,7 +163,7 @@ namespace ShoppingList {
     
    
     
-    async function deleteItem (newItem: HTMLDivElement, i: number): Promise<void> {
+    async function deleteItem (newItem: HTMLDivElement): Promise<void> {
         console.log("Produkt wird entgültig aus der Einkaufliste entfernt");
         
         newItem.parentElement.removeChild(newItem);
@@ -171,9 +171,9 @@ namespace ShoppingList {
 
         query.set("command", "delete");
         query.set("collection", "data");
-        query.set("id", i.toString());
+       
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~langelea/database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~langelea/database?" + query.toString());
         
        
         }
