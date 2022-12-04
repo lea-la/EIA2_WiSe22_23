@@ -27,12 +27,12 @@ namespace L08_2_BirdHouse {
      drawMountains({x: 0 , y: horizon}, 75, 200, "grey", "white");
      
    
-     drawBird();
+     
      drawSnow();
      drawSnowman();
      drawTree();
      drawBirdHouse();
-     drawBird2();
+     drawBird();
      drawSnowflakes();
 
     
@@ -131,82 +131,6 @@ namespace L08_2_BirdHouse {
         crc2.restore();
         
        }
-
-
-    
- 
-    function drawBird(): void {
-        
-        for (let index: number = 0; index < 10; index++) {
-            let x: number = Math.floor(Math.random() * (800 - (-50)) - 50);
-            let y: number = Math.floor(Math.random() * (500 - (10)) - 10);
-            let scale: number = (Math.random() * (0.4 - 0.2) + 0.2);
-            
-       
-            crc2.lineWidth = 1;
-           
-        // Schnabel
-            crc2.save();
-            crc2.beginPath();
-            crc2.translate(x, y);
-            crc2.scale(scale, scale);
-            crc2.moveTo(800, 400);
-            crc2.lineTo(798, 415);
-            crc2.lineTo(832, 410);
-            crc2.closePath();
-            crc2.fillStyle = "yellow";
-            crc2.fill();
-            crc2.restore();
-
-        // Körper
-            crc2.save();
-            crc2.beginPath();
-            crc2.translate(x, y);
-            crc2.scale(scale, scale);
-            crc2.moveTo(800, 400);
-            crc2.lineTo(798, 415);
-            crc2.bezierCurveTo(710, 470, 710, 460, 540, 430);
-            crc2.lineTo(440, 430);
-            crc2.lineTo(455, 405);
-            crc2.bezierCurveTo(540, 410, 540, 420, 610, 400);
-            crc2.bezierCurveTo(590, 330, 590, 340, 540, 300);
-            crc2.bezierCurveTo(580, 260, 580, 270, 615, 290);
-            crc2.lineTo(615, 240);
-            crc2.bezierCurveTo(625, 230, 625, 220, 750, 320);
-            crc2.lineTo(740, 390);
-            crc2.bezierCurveTo(780, 375, 780, 380, 800, 400);
-            crc2.closePath ();
-
-            let gradient: CanvasGradient = crc2.createLinearGradient(0, 100, 0, 400);
-            gradient.addColorStop(0.5, "#808080");
-            gradient.addColorStop(1, "#140505");
-            crc2.fillStyle = gradient;
-            crc2.fill();
-            crc2.restore();
-       
-       
-         //Auge
-            crc2.save();
-            crc2.beginPath();
-            crc2.translate(x, y);
-            crc2.scale(scale, scale);
-            crc2.arc(780, 400, 5, 0, 2 * Math.PI);
-            crc2.closePath();
-            crc2.fillStyle = "yellow";
-            crc2.fill();
-
-            crc2.beginPath();
-            crc2.arc(780, 400, 3, 0, 2 * Math.PI);
-            crc2.closePath();
-            crc2.fillStyle = "black";
-            crc2.fill();
-
-        
-
-            crc2.restore();
-        }
-    
-    }
     
     
     function drawMountains(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
@@ -390,14 +314,14 @@ namespace L08_2_BirdHouse {
         crc2.strokeRect(70, 1490, 250, 230);
     }
 
-    function drawBird2(): void {
+    function drawBird(): void {
 
        
         
-            for (let index: number = 0; index < 10; index++) {
+            for (let index: number = 0; index < 20; index++) {
                 let x: number = Math.floor(Math.random() * (800 - (-50)) - 50);
                 let y: number = Math.floor(Math.random() * (1900 - (100)) - 100);
-                let scale: number = (Math.random() * (0.5 - 0.2) + 0.2);
+                let scale: number = (Math.random() * (0.4 - 0.2) + 0.2);
                 
            
                 crc2.lineWidth = 1;
