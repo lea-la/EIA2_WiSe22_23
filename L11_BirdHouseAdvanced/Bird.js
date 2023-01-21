@@ -1,13 +1,13 @@
-var L10_2_BirdHousePolymorphie;
-(function (L10_2_BirdHousePolymorphie) {
-    class Bird extends L10_2_BirdHousePolymorphie.Moveable {
+var L11_BirdHouseAdvanced;
+(function (L11_BirdHouseAdvanced) {
+    class Bird extends L11_BirdHouseAdvanced.Moveable {
         constructor(_size, _position) {
             super(_position);
             if (_position)
                 this.position = _position.copy();
             else
-                this.position = new L10_2_BirdHousePolymorphie.Vector(0, 0);
-            this.velocity = new L10_2_BirdHousePolymorphie.Vector(0, 0);
+                this.position = new L11_BirdHouseAdvanced.Vector(0, 0);
+            this.velocity = new L11_BirdHouseAdvanced.Vector(0, 0);
             this.velocity.random(0, 200);
             this.size = _size;
         }
@@ -68,7 +68,7 @@ var L10_2_BirdHousePolymorphie;
             crc2.restore();
         }
         move(_timeslice) {
-            super.move(0.007);
+            super.move(0.004);
             let canvas = document.querySelector("canvas");
             let crc2 = canvas.getContext("2d");
             if (this.position.x < -500)
@@ -81,6 +81,6 @@ var L10_2_BirdHousePolymorphie;
                 this.position.y -= crc2.canvas.height;
         }
     }
-    L10_2_BirdHousePolymorphie.Bird = Bird;
-})(L10_2_BirdHousePolymorphie || (L10_2_BirdHousePolymorphie = {}));
+    L11_BirdHouseAdvanced.Bird = Bird;
+})(L11_BirdHouseAdvanced || (L11_BirdHouseAdvanced = {}));
 //# sourceMappingURL=Bird.js.map
